@@ -89,5 +89,42 @@ const double = (num = 1) => {
 console.log("double", double()); // default값인 1의 2배인 값이 나옴
 console.log("double", double(2));
 
-// TODO : 삼항 연산자
-// TODO : spread syntax
+// 삼항 연산자 : 조건식 ? TTrue실행값 : False실행값 (조건식이 true/false일때 실행되는 값)
+// 조건식 ? "  " : "  "
+console.log(
+  isAccessAdminPage
+    ? "⭕⭕관리자 페이지에 접근하실 수 있습니다."
+    : "❌❌관리자 페이지에 접근하실 수 없습니다."
+);
+// score값이 60점 이상이면 "합격", 60점 미만이면 "탈락"
+const score = 50;
+const result = score >= 60 ? "합격" : "탈락";
+console.log("🚀 ~ result:", result);
+
+// spread syntax : 배열이나 객체를 개별요소로 분해하거나 결합할 때 사용하는 문법
+// animals 배열에 항목 추가할 때(원본 배열 수정하면서)
+animals.push("value1");
+// 원본 배열 안건드리면서 배열 복사 및 항목 추가
+const copyArr = [...animals, "value2"];
+console.log("animals", animals);
+console.log("copyArr", copyArr);
+
+const todoItem = {
+  id: 1,
+  content: "React 공부하기",
+};
+
+const newItem = {
+  ...todoItem,
+  isComplete: false, // 기존에 존재하지 않은 키값 : 추가
+  content: "mongoDB 공부하기", // 기존에 존재하는 키값 : 수정
+};
+
+console.log("🚀 ~ todoItem:", todoItem);
+console.log("🚀 ~ newItem:", newItem);
+
+// javascript에서 false로 간주되는 것들 4가지
+// 숫자 0 : 0 이외의 모든 숫자는 true임
+// "" 빈 문자열 (빈 배열은 true임)
+// null
+// undefined
